@@ -13,7 +13,12 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-
+h = hypothesis(X, theta);
+sumError = 0;
+Error = h - y;
+ErrorSquare = Error.^2;
+sumError = sum(ErrorSquare);
+J = 1/(2*m) * sumError;
 
 
 

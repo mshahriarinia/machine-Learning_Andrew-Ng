@@ -15,6 +15,13 @@ J = 0;
 
 
 
+h = hypothesis(X, theta);
+sumError = 0;
+Error = h - y;
+ErrorSquare = Error.^2;
+sumError = sum(ErrorSquare);
+J = 1/(2*m) * sumError;
+
 
 
 % =========================================================================

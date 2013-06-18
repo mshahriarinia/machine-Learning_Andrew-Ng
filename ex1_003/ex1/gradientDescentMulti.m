@@ -18,9 +18,11 @@ for iter = 1:num_iters
     %
 
 
+    J = computeCostDerivativeMulti(X, y, theta);
+    
+    updateTheta = alpha * J; 
 
-
-
+    theta = theta - updateTheta;
 
 
 

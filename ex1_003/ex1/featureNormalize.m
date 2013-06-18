@@ -26,25 +26,21 @@ X_norm = X;
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
-stdFlag = 0;  % to calculate STD according to being devided by n rather than n-1
-STDSize = std(X(:, 1), stdFlag);
-STDBedrooms = std(X(:, 2), stdFlag);
-sigma = [STDSize, STDBedrooms];
+%stdFlag = 0;  % to calculate STD according to being devided by n rather than n-1
 
-muSize = mean(X(:,1))
-muBedrooms = mean(X(:, 2))
-mu = [muSize ,muBedrooms  ];
+
+sigma = std(X);
+
+mu = mean(X);
 
 
 for k=1:length(X_norm)
-    X_norm(k,1) = (X_norm(k,1) - muSize) / STDSize;
-    X_norm(k,2) = (X_norm(k,2) - muBedrooms) / STDBedrooms;
+    X_norm(k,:) = (X_norm(k,:) - mu) ./ sigma;
 end
 
-mean(X_norm(:, 1))
-mean(X_norm(:, 2))
-std(X_norm(:, 1), stdFlag)
-std(X_norm(:, 2), stdFlag)
+mu_norm = mean(X_norm)
+std(X_norm)
+std(X_norm)
 
 
 

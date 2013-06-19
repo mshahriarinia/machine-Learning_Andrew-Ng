@@ -17,12 +17,16 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
-
-    J = computeCostDerivativeMulti(X, y, theta);
     
-    updateTheta = alpha * J; 
+    
+    JPrime = 1/ m * (X' * (X * theta - y));
+    
 
-    theta = theta - updateTheta;
+    %J = computeCostDerivativeMulti(X, y, theta);
+    
+    
+
+    theta = theta - alpha * JPrime;
 
 
 

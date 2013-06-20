@@ -22,7 +22,7 @@ for iter = 1:num_iters
     JPrime = 1/ m * (X' * (X * theta - y));
     
 
-    %J = computeCostDerivativeMulti(X, y, theta);
+   
     
     
 
